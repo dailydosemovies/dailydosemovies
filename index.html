@@ -6,6 +6,10 @@
   <title>DailyDoseMovies – Creator Tools (Ideas, Hashtags, Captions)</title>
   <meta name="description" content="Free creator tools – video idea generator, hashtag generator, and caption generator for Reels, Shorts & TikTok." />
 
+  <!-- ✅ AdSense site verification code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8787887450305192"
+     crossorigin="anonymous"></script>
+
   <style>
     :root {
       --bg: #050816;
@@ -179,6 +183,24 @@
       background: #0f62b0;
     }
 
+    .btn-secondary {
+      margin-top: 8px;
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: #020617;
+      color: var(--text);
+    }
+
     .results {
       margin-top: 12px;
       display: grid;
@@ -250,7 +272,16 @@
       <label for="ideaTopic">Topic / niche</label>
       <input id="ideaTopic" type="text" placeholder="Example: fitness, comedy, horror movies, MrBeast" />
 
+      <label for="ideaStyle">Style</label>
+      <select id="ideaStyle">
+        <option value="mixed">Mixed</option>
+        <option value="challenge">Challenge</option>
+        <option value="educational">Educational</option>
+        <option value="story">Story / POV</option>
+      </select>
+
       <button onclick="generateIdeas()">Generate Video Ideas</button>
+      <button type="button" class="btn-secondary" onclick="copyIdeas()">Copy All Ideas</button>
 
       <div id="ideaResults" class="results"></div>
     </section>
@@ -272,6 +303,7 @@
       </select>
 
       <button onclick="generateHashtags()">Generate Hashtags</button>
+      <button type="button" class="btn-secondary" onclick="copyHashtags()">Copy Hashtags</button>
 
       <div id="hashtagResults" class="results"></div>
       <div class="muted">Tip: Copy 10–15 hashtags per post, mix broad + niche tags.</div>
@@ -286,6 +318,7 @@
       <textarea id="captionTopic" placeholder="Example: funny reaction to horror movie scene"></textarea>
 
       <button onclick="generateCaptions()">Generate Captions</button>
+      <button type="button" class="btn-secondary" onclick="copyCaptions()">Copy Captions</button>
 
       <div id="captionResults" class="results"></div>
     </section>
@@ -298,15 +331,22 @@
 </footer>
 
 <script>
+  // Global latest results for copy buttons
+  let latestIdeasText = "";
+  let latestHashtagsText = "";
+  let latestCaptionsText = "";
+
   // Helper: clean topic string
   function cleanTopic(text) {
     return text.trim();
   }
 
-  // 🎥 VIDEO IDEAS
+  // 🎥 VIDEO IDEAS (improved, random, with styles)
   function generateIdeas() {
     const input = document.getElementById("ideaTopic");
+    const styleSelect = document.getElementById("ideaStyle");
     const topic = cleanTopic(input.value);
+    const style = styleSelect.value;
     const container = document.getElementById("ideaResults");
 
     if (!topic) {
@@ -314,25 +354,58 @@
       return;
     }
 
-    const ideas = [
-      `I tried ${topic} for 30 days – here’s what happened`,
-      `The dark side of ${topic} nobody shows you`,
-      `I spent ₹0 to start with ${topic} – full breakdown`,
-      `24 hours doing ONLY ${topic} (challenge)`,
-      `Beginner vs Pro in ${topic} – side by side`,
-      `${topic} myths you still believe (and the truth)`,
-      `I copied viral ${topic} videos for a week – results`,
-      `If you’re into ${topic}, you need to see this`,
-      `POV: You finally start ${topic} seriously`,
-      `How ${topic} completely changed my life`
+    const challenge = [
+      `24 hours doing ONLY ${topic} – can I survive?`,
+      `I tried ${topic} every day for 7 days – results`,
+      `I let my followers control my ${topic} for a day`,
+      `${topic} on hard mode – no excuses challenge`,
+      `If I fail this ${topic} challenge, I owe you ₹10,000`
     ];
 
-    container.innerHTML = ideas
+    const educational = [
+      `Top 5 mistakes everyone makes in ${topic} (and how to fix them)`,
+      `${topic} for beginners – everything I wish I knew`,
+      `${topic} hacks that actually work (no fluff)`,
+      `I tried “expert” ${topic} tips so you don’t have to`,
+      `${topic} in 60 seconds – simple breakdown`
+    ];
+
+    const story = [
+      `POV: You finally take ${topic} seriously`,
+      `How ${topic} completely changed my life`,
+      `I almost quit ${topic}… then this happened`,
+      `The dark side of ${topic} nobody talks about`,
+      `Doing ${topic} with my friends – pure chaos`
+    ];
+
+    const mixedPool = [...challenge, ...educational, ...story];
+
+    let pool = mixedPool;
+    if (style === "challenge") pool = challenge.concat(mixedPool);
+    if (style === "educational") pool = educational.concat(mixedPool);
+    if (style === "story") pool = story.concat(mixedPool);
+
+    // Shuffle
+    pool = pool.sort(() => Math.random() - 0.5);
+
+    const selected = pool.slice(0, 10);
+
+    latestIdeasText = selected.join("\n");
+
+    container.innerHTML = selected
       .map(
         (idea, i) =>
           `<div class="idea-box"><b>Idea ${i + 1}:</b> ${idea}</div>`
       )
       .join("");
+  }
+
+  function copyIdeas() {
+    if (!latestIdeasText) {
+      alert("Generate ideas first, then copy.");
+      return;
+    }
+    copyToClipboard(latestIdeasText, "Ideas copied to clipboard!");
   }
 
   // #️⃣ HASHTAGS
@@ -347,7 +420,6 @@
       return;
     }
 
-    // base keywords
     const base = topic
       .toLowerCase()
       .replace(/[^\w\s]/g, "")
@@ -387,9 +459,19 @@
       24
     );
 
+    latestHashtagsText = all.join(" ");
+
     container.innerHTML =
       `<div class="pill">${all.join("  ")}</div>` +
-      `<div class="muted">Tap and hold to select & copy.</div>`;
+      `<div class="muted">Tap and hold to select & copy, or use the copy button.</div>`;
+  }
+
+  function copyHashtags() {
+    if (!latestHashtagsText) {
+      alert("Generate hashtags first, then copy.");
+      return;
+    }
+    copyToClipboard(latestHashtagsText, "Hashtags copied to clipboard!");
   }
 
   // ✍️ CAPTIONS
@@ -407,18 +489,53 @@
       `POV: ${topic} 👀`,
       `I can’t be the only one who does this… ${topic}`,
       `${topic} – save this so you don’t forget 🔖`,
-      `If this lands on your feed, take it as a sign to try ${topic}.`,
+      `If this lands on your feed, take it as a sign to try this 👇\n${topic}`,
       `${topic} | rate this out of 10 in the comments ⬇️`,
       `Watch till the end… it gets crazy 😳 (${topic})`,
       `Low budget, high effort. ${topic}`,
       `Doing ${topic} so you don’t have to 😅`,
       `One day this will blow up. For now it’s just us and ${topic}.`,
       `Drop a 🔥 if you want part 2 of ${topic}.`
-    ];
+    ].sort(() => Math.random() - 0.5); // random order
+
+    latestCaptionsText = caps.join("\n");
 
     container.innerHTML = caps
       .map((c) => `<div class="idea-box">${c}</div>`)
       .join("");
+  }
+
+  function copyCaptions() {
+    if (!latestCaptionsText) {
+      alert("Generate captions first, then copy.");
+      return;
+    }
+    copyToClipboard(latestCaptionsText, "Captions copied to clipboard!");
+  }
+
+  // 🔁 Generic copy helper
+  function copyToClipboard(text, successMessage) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert(successMessage))
+        .catch(() => fallbackCopy(text, successMessage));
+    } else {
+      fallbackCopy(text, successMessage);
+    }
+  }
+
+  function fallbackCopy(text, successMessage) {
+    const temp = document.createElement("textarea");
+    temp.value = text;
+    document.body.appendChild(temp);
+    temp.select();
+    try {
+      document.execCommand("copy");
+      alert(successMessage);
+    } catch (e) {
+      alert("Could not copy, please select and copy manually.");
+    }
+    document.body.removeChild(temp);
   }
 </script>
 

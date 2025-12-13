@@ -1,55 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DailyDoseMovies – Creator Toolbox (Ideas, Hashtags, Captions, Blog)</title>
-  <meta name="description" content="Free creator tools — generate video ideas, hashtags, captions and blog outlines for Reels, Shorts, TikTok & YouTube. Fast, mobile-friendly tools to help creators publish more." />
-  <meta name="robots" content="index,follow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- AdSense Global Script: your client -->
+  <title>DailyDoseMovies – Free Creator Tools for Reels, Shorts & TikTok</title>
+
+  <meta name="description" content="DailyDoseMovies provides free creator tools including video idea generator, hashtag generator and caption generator for Instagram Reels, YouTube Shorts and TikTok." />
+
+  <!-- Google AdSense verification (KEEP THIS) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8787887450305192"
      crossorigin="anonymous"></script>
 
   <style>
-    :root{
-      --bg:#050816; --card:#0f1720; --accent:#1e88e5; --muted:#9ca3af; --text:#f7fafc; --radius:12px;
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --accent: #1e88e5;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius: 12px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,#071025 0,#030411 100%);color:var(--text);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    header{position:sticky;top:0;z-index:30;background:rgba(2,6,23,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.03)}
-    .nav-inner{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:800;font-size:18px}
-    .logo span{color:var(--accent)}
-    .nav-links{display:flex;gap:10px;align-items:center}
-    .nav-links a{padding:6px 10px;border-radius:999px;color:var(--muted);font-size:14px}
-    .nav-links a:hover{background:rgba(30,136,229,.08);color:var(--text)}
-    main{max-width:980px;margin:18px auto;padding:18px}
-    .hero{text-align:center;padding:34px 12px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);box-shadow:0 8px 30px rgba(2,6,23,.6)}
-    .hero h1{margin:0 0 8px;font-size:22px}
-    .hero p{margin:0;color:var(--muted);line-height:1.6}
-    .content-block{margin:18px 0;padding:16px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,.02)}
-    .tools-grid{display:flex;flex-direction:column;gap:20px}
-    .tool-card{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.005));border:1px solid rgba(255,255,255,.02)}
-    h2{margin:0 0 6px;font-size:18px}
-    small{color:var(--muted);display:block;margin-bottom:10px}
-    label{display:block;color:var(--muted);font-size:13px;margin:8px 0 6px}
-    input[type="text"],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.04);background:#021023;color:var(--text);font-size:15px}
-    textarea{min-height:80px}
-    .controls{display:flex;gap:10px;flex-direction:column}
-    .row{display:flex;gap:10px}
-    button{display:inline-block;padding:11px;border-radius:999px;border:none;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.06);color:var(--muted);font-weight:600}
-    .results{margin-top:12px;display:grid;gap:10px}
-    .idea-box{padding:10px;border-radius:10px;background:#021226;border:1px solid rgba(255,255,255,.02);white-space:pre-line}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#021226;border:1px solid rgba(255,255,255,.02)}
-    .muted{color:var(--muted);font-size:13px}
-    footer{text-align:center;color:var(--muted);padding:22px 12px;margin-top:12px;border-top:1px solid rgba(255,255,255,.02)}
-    .ad-block{margin:18px 0}
-    @media(min-width:880px){.tools-grid{flex-direction:row;gap:16px}.tool-card{flex:1}}
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827, #020617 60%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: #020617ee;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(30,136,229,0.15);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+
+    .tool-card h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--text);
+      margin-top: 6px;
+    }
+
+    button {
+      margin-top: 12px;
+      width: 100%;
+      padding: 12px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .results { margin-top: 12px; }
+
+    .idea-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 20px 12px;
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -59,364 +167,118 @@
       <a href="#ideas">Ideas</a>
       <a href="#hashtags">Hashtags</a>
       <a href="#captions">Captions</a>
-      <a href="#blog">Blog Tool</a>
       <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <h1>Creator Toolbox for Reels, Shorts, TikTok & YouTube</h1>
-    <p>Generate video ideas, hashtags, captions and blog outlines — all on one mobile-friendly page. These free tools help creators publish faster, grow reach, and improve engagement without expensive software.</p>
-  </section>
 
-  <!-- IMPORTANT: Text content for AdSense review -->
-  <section class="content-block">
-    <h2>About DailyDoseMovies Tools</h2>
-    <p style="color:var(--muted);line-height:1.6;margin-top:8px">
-      DailyDoseMovies.store provides practical, original tools for digital creators focusing on short-form video platforms (Instagram Reels, YouTube Shorts, TikTok). Our mission is to help creators save time while producing better content — whether you need a scroll-stopping caption, a set of targeted hashtags, fresh video ideas, or an SEO-friendly blog outline to drive search traffic.
-      <br><br>
-      All tools run directly in your browser — no accounts, no trackers, and no complicated setup. The suggestions are generated using deterministic logic and randomization to keep ideas unique each time. We host the site using GitHub Pages; it is served over HTTPS and kept minimal for fast load times on mobile networks.
-      <br><br>
-      If you have questions or want us to add more tools (thumbnail ideas, hook generator, or content calendar), use the Contact page. We respect user privacy — see the Privacy Policy for details.
-    </p>
-  </section>
+<section class="hero">
+  <h1>Free Creator Tools for Reels, Shorts & TikTok</h1>
+  <p>Generate video ideas, hashtags and captions to grow your audience faster.</p>
+</section>
 
-  <!-- AD 1: Top -->
-  <div class="ad-block" aria-hidden="true">
-    <!-- Daily Dose Movies -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8787887450305192"
-         data-ad-slot="9843438608"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+<!-- CONTENT SECTION (VERY IMPORTANT FOR ADSENSE) -->
+<section class="tool-card">
+  <h2>About DailyDoseMovies</h2>
 
-  <!-- Tools grid (single column on mobile, multi-column on desktop) -->
-  <div class="tools-grid">
+  <p>
+    DailyDoseMovies.store is a free online platform created for digital content creators who
+    publish videos on Instagram Reels, YouTube Shorts, TikTok, and other short-form platforms.
+    The goal of this website is to help creators save time, stay consistent, and improve their
+    content strategy without relying on expensive tools or subscriptions.
+  </p>
 
-    <!-- Video Ideas -->
-    <section id="ideas" class="tool-card">
-      <h2>🎥 Video Idea Generator</h2>
-      <small>Turn a topic into 10 unique, ready-to-record video concepts.</small>
+  <p>
+    Many creators struggle with finding new video ideas, writing engaging captions, and choosing
+    the right hashtags that increase reach and engagement. DailyDoseMovies solves these problems
+    by offering easy-to-use tools that instantly generate creative suggestions based on your topic
+    or niche.
+  </p>
 
-      <label for="ideaTopic">Topic / niche</label>
-      <input id="ideaTopic" type="text" placeholder="e.g. horror movies, fitness, food hacks, MrBeast">
+  <p>
+    This website focuses on providing original, helpful, and creator-focused tools. All tools are
+    free to use, require no account registration, and are designed to support creators at every
+    stage of their journey.
+  </p>
+</section>
 
-      <label for="ideaStyle">Style</label>
-      <select id="ideaStyle">
-        <option value="mixed">Mixed</option>
-        <option value="challenge">Challenge</option>
-        <option value="educational">Educational</option>
-        <option value="story">Story / POV</option>
-      </select>
+<!-- VIDEO IDEA GENERATOR -->
+<section id="ideas" class="tool-card">
+  <h2>🎥 Video Idea Generator</h2>
 
-      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-        <button onclick="generateIdeas()">Generate Video Ideas</button>
-        <button class="btn-ghost" onclick="copyIdeas()">Copy All Ideas</button>
-      </div>
+  <label>Enter your niche or topic</label>
+  <input id="ideaTopic" type="text" placeholder="fitness, movies, comedy, gaming" />
 
-      <div id="ideaResults" class="results" role="region" aria-live="polite"></div>
-    </section>
+  <button onclick="generateIdeas()">Generate Ideas</button>
 
-    <!-- Hashtags -->
-    <section id="hashtags" class="tool-card">
-      <h2>#️⃣ Hashtag Generator</h2>
-      <small>Get a mix of broad + niche hashtags for your platform.</small>
+  <div id="ideaResults" class="results"></div>
+</section>
 
-      <label for="hashtagTopic">Topic / keyword</label>
-      <input id="hashtagTopic" type="text" placeholder="e.g. travel vlog, gym motivation, meme">
+<!-- HASHTAG GENERATOR -->
+<section id="hashtags" class="tool-card">
+  <h2>#️⃣ Hashtag Generator</h2>
 
-      <label for="platform">Platform</label>
-      <select id="platform">
-        <option value="reels">Instagram Reels</option>
-        <option value="shorts">YouTube Shorts</option>
-        <option value="tiktok">TikTok</option>
-        <option value="generic">All Platforms</option>
-      </select>
+  <label>Topic</label>
+  <input id="hashtagTopic" type="text" placeholder="gym motivation, travel vlog" />
 
-      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-        <button onclick="generateHashtags()">Generate Hashtags</button>
-        <button class="btn-ghost" onclick="copyHashtags()">Copy Hashtags</button>
-      </div>
+  <button onclick="generateHashtags()">Generate Hashtags</button>
 
-      <div id="hashtagResults" class="results"></div>
-      <div class="muted" style="margin-top:8px">Tip: copy 10–15 hashtags per post; mix popular + niche tags.</div>
-    </section>
+  <div id="hashtagResults" class="results"></div>
+</section>
 
-    <!-- Caption Generator -->
-    <section id="captions" class="tool-card">
-      <h2>✍️ Caption Generator</h2>
-      <small>Scroll-stopping captions with hooks & CTAs.</small>
+<!-- CAPTION GENERATOR -->
+<section id="captions" class="tool-card">
+  <h2>✍️ Caption Generator</h2>
 
-      <label for="captionTopic">What is your video about?</label>
-      <textarea id="captionTopic" placeholder="e.g. funny reaction to a movie scene"></textarea>
+  <label>Describe your video</label>
+  <textarea id="captionTopic" placeholder="funny reaction to horror movie"></textarea>
 
-      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-        <button onclick="generateCaptions()">Generate Captions</button>
-        <button class="btn-ghost" onclick="copyCaptions()">Copy Captions</button>
-      </div>
+  <button onclick="generateCaptions()">Generate Captions</button>
 
-      <div id="captionResults" class="results"></div>
-    </section>
+  <div id="captionResults" class="results"></div>
+</section>
 
-  </div> <!-- end tools-grid -->
+<!-- HOW TO USE -->
+<section class="tool-card">
+  <h2>How to Use These Tools</h2>
+  <p>
+    Simply enter a topic related to your content, click the generate button, and copy the results.
+    You can customize the generated output to match your personal style and audience.
+  </p>
+</section>
 
-  <!-- AD 2: Mid page -->
-  <div class="ad-block" aria-hidden="true">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8787887450305192"
-         data-ad-slot="9843438608"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- Blog / Outline generator (same page) -->
-  <section id="blog" class="tool-card content-block" style="margin-top:12px">
-    <h2>📝 Blog & SEO Outline Generator</h2>
-    <small>Create title ideas and an H2 outline for long-form posts.</small>
-
-    <label for="blogTopic">Main topic / keyword</label>
-    <input id="blogTopic" type="text" placeholder="e.g. best horror movies on Netflix, how to grow on Instagram Reels">
-
-    <label for="blogType">Article type</label>
-    <select id="blogType">
-      <option value="listicle">Listicle (Top 10)</option>
-      <option value="tutorial">How-to / Guide</option>
-      <option value="review">Review / Opinion</option>
-      <option value="news">News / Trend</option>
-    </select>
-
-    <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-      <button onclick="generateBlog()">Generate Blog Idea & Outline</button>
-      <button class="btn-ghost" onclick="copyBlog()">Copy Blog Outline</button>
-    </div>
-
-    <div id="blogResults" class="results" style="margin-top:12px"></div>
-  </section>
-
-  <!-- AD 3: Bottom -->
-  <div class="ad-block" aria-hidden="true">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8787887450305192"
-         data-ad-slot="9843438608"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <footer>
-    <div style="max-width:980px;margin:0 auto;padding:10px 16px">
-      <div class="muted">© 2025 DailyDoseMovies — Free creator tools for short-form video makers.</div>
-      <div style="margin-top:8px"><a href="/about.html">About</a> • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a> • <a href="/contact.html">Contact</a></div>
-    </div>
-  </footer>
 </main>
 
+<footer>
+  © 2025 DailyDoseMovies.store — Free tools for content creators.
+</footer>
+
 <script>
-  // --- Helpers & global state
-  let latestIdeasText = "";
-  let latestHashtagsText = "";
-  let latestCaptionsText = "";
-  let latestBlogText = "";
+function generateIdeas() {
+  const t = document.getElementById("ideaTopic").value;
+  document.getElementById("ideaResults").innerHTML =
+    `<div class="idea-box">I tried ${t} for 30 days – results</div>
+     <div class="idea-box">Beginner vs Pro in ${t}</div>
+     <div class="idea-box">Top mistakes people make in ${t}</div>`;
+}
 
-  function cleanTopic(text){ return (text||"").toString().trim(); }
+function generateHashtags() {
+  const t = document.getElementById("hashtagTopic").value.replace(/\s+/g,'');
+  document.getElementById("hashtagResults").innerHTML =
+    `<div class="idea-box">#${t} #viral #trending #reels #shorts</div>`;
+}
 
-  // --- Video Ideas (improved)
-  function generateIdeas(){
-    const topic = cleanTopic(document.getElementById("ideaTopic").value);
-    const style = document.getElementById("ideaStyle").value;
-    const container = document.getElementById("ideaResults");
-    if(!topic){ alert("Please enter a topic for ideas."); return; }
-
-    const challenge = [
-      `24 hours doing ONLY ${topic} — can I survive?`,
-      `I tried ${topic} every day for 7 days — results were surprising`,
-      `I let my followers control my ${topic} for a day`,
-      `${topic} on hard mode — no excuses challenge`,
-      `If I fail this ${topic} challenge, I owe you ₹10,000`
-    ];
-    const educational = [
-      `Top 5 mistakes everyone makes in ${topic} (and how to fix them)`,
-      `${topic} for beginners — everything I wish I knew`,
-      `${topic} hacks that actually work (no fluff)`,
-      `I tested "expert" ${topic} tips so you don't have to`,
-      `${topic} in 60 seconds — simple breakdown`
-    ];
-    const story = [
-      `POV: You finally try ${topic} — here's what happens`,
-      `How ${topic} changed my life (short story)`,
-      `I almost quit ${topic}… then this happened`,
-      `The dark side of ${topic} nobody talks about`,
-      `Doing ${topic} with friends — chaos ensues`
-    ];
-
-    let pool = [...challenge, ...educational, ...story];
-    if(style==="challenge") pool = [...challenge,...pool];
-    if(style==="educational") pool = [...educational,...pool];
-    if(style==="story") pool = [...story,...pool];
-
-    pool = pool.sort(()=>Math.random()-0.5);
-    const selected = pool.slice(0,10);
-    latestIdeasText = selected.join("\n\n");
-    container.innerHTML = selected.map((s,i)=>`<div class="idea-box"><strong>Idea ${i+1}:</strong> ${s}</div>`).join("");
-  }
-
-  function copyIdeas(){
-    if(!latestIdeasText){ alert("Generate ideas first."); return; }
-    copyToClipboard(latestIdeasText,"Ideas copied to clipboard!");
-  }
-
-  // --- Hashtags
-  function generateHashtags(){
-    const raw = cleanTopic(document.getElementById("hashtagTopic").value);
-    const platform = document.getElementById("platform").value;
-    const container = document.getElementById("hashtagResults");
-    if(!raw){ alert("Please enter a topic for hashtags."); return; }
-
-    const base = raw.toLowerCase().replace(/[^\w\s]/g,"").split(/\s+/).filter(Boolean);
-    const joined = base.join("");
-    const spaced = base.join("_");
-    const generic = ["#"+joined, "#"+spaced, "#"+joined+"vibes", "#"+joined+"daily", "#viral", "#trending", "#explore", "#explorepage"];
-    let platformTags = [];
-    if(platform==="reels"){ platformTags = ["#reels","#reelsinstagram","#reelitfeelit","#reelsvideo","#reelsdaily"]; }
-    else if(platform==="shorts"){ platformTags = ["#shorts","#youtubeshorts","#shortsvideo"]; }
-    else if(platform==="tiktok"){ platformTags = ["#tiktok","#fyp","#foryou","#tiktoktrend"]; }
-    else { platformTags = ["#contentcreator","#creator","#videocreator"]; }
-
-    const niche = base.map(w=>"#"+w);
-    const all = Array.from(new Set([...generic,...platformTags,...niche])).slice(0,24);
-    latestHashtagsText = all.join(" ");
-    container.innerHTML = `<div class="pill">${all.join("  ")}</div><div class="muted" style="margin-top:8px">Tap & hold to copy or use the button.</div>`;
-  }
-
-  function copyHashtags(){
-    if(!latestHashtagsText){ alert("Generate hashtags first."); return; }
-    copyToClipboard(latestHashtagsText,"Hashtags copied to clipboard!");
-  }
-
-  // --- Captions
-  function generateCaptions(){
-    const topic = cleanTopic(document.getElementById("captionTopic").value);
-    const container = document.getElementById("captionResults");
-    if(!topic){ alert("Please describe your video for captions."); return; }
-
-    const caps = [
-      `POV: ${topic} 👀`,
-      `I can’t be the only one who does this… ${topic}`,
-      `${topic} – save this so you don’t forget 🔖`,
-      `If this lands on your feed, take it as a sign to try this 👇\n${topic}`,
-      `${topic} | rate this out of 10 in the comments ⬇️`,
-      `Watch till the end… it gets crazy 😳 (${topic})`,
-      `Low budget, high effort. ${topic}`,
-      `Doing ${topic} so you don’t have to 😅`,
-      `One day this will blow up. For now it’s just us and ${topic}.`,
-      `Drop a 🔥 if you want part 2 of ${topic}.`
-    ].sort(()=>Math.random()-0.5);
-
-    latestCaptionsText = caps.join("\n\n");
-    container.innerHTML = caps.map(c=>`<div class="idea-box">${c}</div>`).join("");
-  }
-
-  function copyCaptions(){
-    if(!latestCaptionsText){ alert("Generate captions first."); return; }
-    copyToClipboard(latestCaptionsText,"Captions copied to clipboard!");
-  }
-
-  // --- Blog / Outline
-  function generateBlog(){
-    const topic = cleanTopic(document.getElementById("blogTopic").value);
-    const type = document.getElementById("blogType").value;
-    const container = document.getElementById("blogResults");
-    if(!topic){ alert("Please enter a topic for the blog."); return; }
-
-    let title="", outline=[];
-    if(type==="listicle"){
-      title = `Top 10 ${topic} — Complete List & Recommendations`;
-      outline = [
-        "Intro — why this topic matters",
-        "How we picked these items",
-        "H2 — Pick #1",
-        "H2 — Pick #2",
-        "H2 — Pick #3",
-        "H2 — Picks #4–7 (quick notes)",
-        "H2 — Picks #8–10 (hidden gems)",
-        "How to choose the best option",
-        "FAQ",
-        "Conclusion & CTA"
-      ];
-    } else if(type==="tutorial"){
-      title = `How to ${topic} — Step-by-step Guide`;
-      outline = [
-        "Intro — who this guide is for",
-        "What you need first",
-        "Step 1 — preparation",
-        "Step 2 — main process",
-        "Step 3 — common mistakes",
-        "Advanced tips",
-        "Examples / case study",
-        "Tools & resources",
-        "FAQ",
-        "Conclusion & CTA"
-      ];
-    } else if(type==="news"){
-      title = `${topic} — The Latest Updates & What They Mean`;
-      outline = [
-        "Intro — key summary",
-        "Background",
-        "Timeline of events",
-        "Community reaction",
-        "Expert takes",
-        "Impact going forward",
-        "Our analysis",
-        "FAQ",
-        "Conclusion & CTA"
-      ];
-    } else { // review
-      title = `${topic} — Honest Review (No Major Spoilers)`;
-      outline = [
-        "Intro — why it matters",
-        "Quick summary",
-        "What worked",
-        "What didn't",
-        "Highlights",
-        "Who should watch",
-        "Where to watch",
-        "Final verdict",
-        "FAQ",
-        "CTA"
-      ];
-    }
-
-    latestBlogText = `TITLE IDEA:\n${title}\n\nOUTLINE:\n` + outline.map((t,i)=>`${i+1}. ${t}`).join("\n");
-    container.innerHTML = `<div class="idea-box"><strong>${title}</strong></div><div style="margin-top:8px" class="idea-box">${outline.map((h,i)=>`${i+1}. ${h}`).join("<br>")}</div>`;
-  }
-
-  function copyBlog(){
-    if(!latestBlogText){ alert("Generate a blog idea first."); return; }
-    copyToClipboard(latestBlogText,"Blog outline copied to clipboard!");
-  }
-
-  // --- Copy helper
-  function copyToClipboard(text, msg){
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(()=>alert(msg)).catch(()=>fallbackCopy(text,msg));
-    } else { fallbackCopy(text,msg); }
-  }
-  function fallbackCopy(text,msg){
-    const t = document.createElement("textarea");
-    t.value = text; document.body.appendChild(t);
-    t.select(); try{ document.execCommand("copy"); alert(msg); } catch(e){ alert("Copy failed — please select manually."); }
-    document.body.removeChild(t);
-  }
+function generateCaptions() {
+  const t = document.getElementById("captionTopic").value;
+  document.getElementById("captionResults").innerHTML =
+    `<div class="idea-box">POV: ${t}</div>
+     <div class="idea-box">Watch till the end 👀</div>`;
+}
 </script>
 
 </body>

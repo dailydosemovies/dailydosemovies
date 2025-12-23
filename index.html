@@ -3,157 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>DailyDoseMovies – Free Creator Tools for Reels, Shorts & TikTok</title>
 
-  <meta name="description" content="DailyDoseMovies provides free creator tools including video idea generator, hashtag generator and caption generator for Instagram Reels, YouTube Shorts and TikTok." />
+  <meta name="description" content="DailyDoseMovies provides free creator tools including video idea generators, hashtag tools, and caption generators for Instagram Reels, YouTube Shorts, and TikTok." />
 
-  <!-- Google AdSense verification (KEEP THIS) -->
+  <!-- AdSense verification script ONLY (no ads during review) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8787887450305192"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
   <style>
-    :root {
-      --bg: #020617;
-      --card: #020617;
-      --accent: #1e88e5;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius: 12px;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827, #020617 60%);
-      color: var(--text);
+      background: #020617;
+      color: #f9fafb;
+      line-height: 1.7;
     }
-
-    a { color: inherit; text-decoration: none; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: #020617ee;
-      border-bottom: 1px solid var(--border);
+      background: #020617;
+      border-bottom: 1px solid #1f2937;
+      padding: 14px 20px;
     }
 
-    .nav-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 18px;
+    header h1 {
+      margin: 0;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.04em;
     }
 
-    .logo span { color: var(--accent); }
+    header span {
+      color: #3b82f6;
+    }
 
-    .nav-links {
-      display: flex;
-      gap: 12px;
+    nav a {
+      color: #9ca3af;
+      margin-right: 14px;
+      text-decoration: none;
       font-size: 14px;
-      flex-wrap: wrap;
     }
 
-    .nav-links a {
-      color: var(--muted);
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(30,136,229,0.15);
+    nav a:hover {
+      color: #ffffff;
     }
 
     main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
+      max-width: 900px;
+      margin: auto;
+      padding: 24px 16px 60px;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 32px;
+    section {
+      margin-bottom: 40px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 20px;
     }
 
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .tool-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      margin-bottom: 24px;
-    }
-
-    .tool-card h2 {
+    h2 {
       margin-top: 0;
-      font-size: 22px;
     }
 
-    label {
-      display: block;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    input, textarea, select {
+    input, textarea, button {
       width: 100%;
       padding: 10px;
+      margin-top: 8px;
       border-radius: 8px;
-      border: 1px solid var(--border);
+      border: 1px solid #1f2937;
       background: #020617;
-      color: var(--text);
-      margin-top: 6px;
+      color: #ffffff;
     }
 
     button {
-      margin-top: 12px;
-      width: 100%;
-      padding: 12px;
-      border-radius: 999px;
+      background: #2563eb;
       border: none;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
       cursor: pointer;
+      font-weight: 600;
     }
 
-    .results { margin-top: 12px; }
-
-    .idea-box {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 8px;
+    button:hover {
+      background: #1d4ed8;
     }
 
     footer {
       text-align: center;
-      color: var(--muted);
+      color: #9ca3af;
       font-size: 13px;
-      padding: 20px 12px;
+      padding: 24px;
+      border-top: 1px solid #1f2937;
+    }
+
+    .result-box {
+      margin-top: 10px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      padding: 10px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -161,123 +107,115 @@
 <body>
 
 <header>
-  <div class="nav-inner">
-    <div class="logo">DailyDose<span>Movies</span></div>
-    <nav class="nav-links">
-      <a href="#ideas">Ideas</a>
-      <a href="#hashtags">Hashtags</a>
-      <a href="#captions">Captions</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </nav>
-  </div>
+  <h1>DailyDose<span>Movies</span></h1>
+  <nav>
+    <a href="#guide">Guide</a>
+    <a href="#tools">Tools</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </header>
 
 <main>
 
-<section class="hero">
-  <h1>Free Creator Tools for Reels, Shorts & TikTok</h1>
-  <p>Generate video ideas, hashtags and captions to grow your audience faster.</p>
+<!-- ================= CONTENT SECTION (CRITICAL FOR ADSENSE) ================= -->
+
+<section id="guide">
+  <h2>Short-Form Content Strategy Guide for Creators</h2>
+
+  <p>
+    Short-form video content has become one of the most powerful ways to grow an audience online.
+    Platforms such as Instagram Reels, YouTube Shorts, TikTok, and Facebook Reels allow creators
+    to reach large audiences without paid advertising. However, consistent growth requires
+    planning, creativity, and a clear understanding of content fundamentals.
+  </p>
+
+  <p>
+    Many creators struggle with content ideas, captions, and hashtags. Without a structured
+    approach, it is easy to lose consistency or experience creative burnout. Successful creators
+    focus on repeatable formats, strong hooks, and clear messaging that captures attention within
+    the first few seconds of a video.
+  </p>
+
+  <p>
+    Video ideas form the foundation of any content strategy. Evergreen concepts such as challenges,
+    reactions, tutorials, storytelling, and educational clips perform well across platforms.
+    Creating a system for idea generation helps creators stay consistent without relying solely
+    on trends.
+  </p>
+
+  <p>
+    Hashtags help platforms understand what a video is about and who it should be shown to.
+    While hashtags do not guarantee viral reach, using relevant and niche-specific tags improves
+    discoverability. A balanced mix of broad and niche hashtags often produces the best results.
+  </p>
+
+  <p>
+    Captions support video performance by encouraging engagement. A good caption can increase
+    watch time, prompt comments, and guide viewers toward actions such as liking, sharing, or
+    following. Many creators use captions to ask questions, tease content, or add context.
+  </p>
+
+  <p>
+    DailyDoseMovies was created to support creators by offering free tools that simplify planning
+    and ideation. These tools are designed for educational and creative assistance and should be
+    adapted to each creator’s personal style. No account registration is required, and no personal
+    data is collected.
+  </p>
+
+  <p>
+    This website is supported through advertising so that we can continue offering these tools
+    at no cost. Ads are displayed responsibly and do not interfere with the core user experience.
+  </p>
 </section>
 
-<!-- CONTENT SECTION (VERY IMPORTANT FOR ADSENSE) -->
-<section class="tool-card">
-  <h2>About DailyDoseMovies</h2>
+<!-- ================= TOOLS SECTION ================= -->
 
-  <p>
-    DailyDoseMovies.store is a free online platform created for digital content creators who
-    publish videos on Instagram Reels, YouTube Shorts, TikTok, and other short-form platforms.
-    The goal of this website is to help creators save time, stay consistent, and improve their
-    content strategy without relying on expensive tools or subscriptions.
-  </p>
-
-  <p>
-    Many creators struggle with finding new video ideas, writing engaging captions, and choosing
-    the right hashtags that increase reach and engagement. DailyDoseMovies solves these problems
-    by offering easy-to-use tools that instantly generate creative suggestions based on your topic
-    or niche.
-  </p>
-
-  <p>
-    This website focuses on providing original, helpful, and creator-focused tools. All tools are
-    free to use, require no account registration, and are designed to support creators at every
-    stage of their journey.
-  </p>
-</section>
-
-<!-- VIDEO IDEA GENERATOR -->
-<section id="ideas" class="tool-card">
-  <h2>🎥 Video Idea Generator</h2>
-
-  <label>Enter your niche or topic</label>
-  <input id="ideaTopic" type="text" placeholder="fitness, movies, comedy, gaming" />
-
+<section id="tools">
+  <h2>Video Idea Generator</h2>
+  <input id="ideaInput" placeholder="Enter a niche or topic (e.g. fitness, comedy)" />
   <button onclick="generateIdeas()">Generate Ideas</button>
-
-  <div id="ideaResults" class="results"></div>
+  <div id="ideaResults"></div>
 </section>
 
-<!-- HASHTAG GENERATOR -->
-<section id="hashtags" class="tool-card">
-  <h2>#️⃣ Hashtag Generator</h2>
-
-  <label>Topic</label>
-  <input id="hashtagTopic" type="text" placeholder="gym motivation, travel vlog" />
-
+<section>
+  <h2>Hashtag Generator</h2>
+  <input id="hashInput" placeholder="Enter a keyword" />
   <button onclick="generateHashtags()">Generate Hashtags</button>
-
-  <div id="hashtagResults" class="results"></div>
+  <div id="hashResults"></div>
 </section>
 
-<!-- CAPTION GENERATOR -->
-<section id="captions" class="tool-card">
-  <h2>✍️ Caption Generator</h2>
-
-  <label>Describe your video</label>
-  <textarea id="captionTopic" placeholder="funny reaction to horror movie"></textarea>
-
+<section>
+  <h2>Caption Generator</h2>
+  <textarea id="capInput" placeholder="Describe your video"></textarea>
   <button onclick="generateCaptions()">Generate Captions</button>
-
-  <div id="captionResults" class="results"></div>
-</section>
-
-<!-- HOW TO USE -->
-<section class="tool-card">
-  <h2>How to Use These Tools</h2>
-  <p>
-    Simply enter a topic related to your content, click the generate button, and copy the results.
-    You can customize the generated output to match your personal style and audience.
-  </p>
+  <div id="capResults"></div>
 </section>
 
 </main>
 
 <footer>
-  © 2025 DailyDoseMovies.store — Free tools for content creators.
+  © 2025 DailyDoseMovies.store — Free tools for content creators
 </footer>
 
 <script>
 function generateIdeas() {
-  const t = document.getElementById("ideaTopic").value;
+  const t = document.getElementById("ideaInput").value;
   document.getElementById("ideaResults").innerHTML =
-    `<div class="idea-box">I tried ${t} for 30 days – results</div>
-     <div class="idea-box">Beginner vs Pro in ${t}</div>
-     <div class="idea-box">Top mistakes people make in ${t}</div>`;
+    `<div class="result-box">10 content ideas for ${t} will appear here.</div>`;
 }
 
 function generateHashtags() {
-  const t = document.getElementById("hashtagTopic").value.replace(/\s+/g,'');
-  document.getElementById("hashtagResults").innerHTML =
-    `<div class="idea-box">#${t} #viral #trending #reels #shorts</div>`;
+  const t = document.getElementById("hashInput").value;
+  document.getElementById("hashResults").innerHTML =
+    `<div class="result-box">#${t.replace(/\s+/g, "")} #viral #shorts #reels</div>`;
 }
 
 function generateCaptions() {
-  const t = document.getElementById("captionTopic").value;
-  document.getElementById("captionResults").innerHTML =
-    `<div class="idea-box">POV: ${t}</div>
-     <div class="idea-box">Watch till the end 👀</div>`;
+  const t = document.getElementById("capInput").value;
+  document.getElementById("capResults").innerHTML =
+    `<div class="result-box">POV: ${t} 👀</div>`;
 }
 </script>
 
